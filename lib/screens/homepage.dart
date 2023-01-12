@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:note2f/screens/note_editor.dart';
 import 'package:note2f/screens/note_reader.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:note2f/widget/note_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -62,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 22,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
                 Expanded(
@@ -70,13 +69,13 @@ class _HomePageState extends State<HomePage> {
                     stream: FirebaseFirestore.instance.collection("Notes").snapshots(),
                     builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return Center(
+                        return const Center(
                           child: CircularProgressIndicator(),
                         );
                       }
                       if (snapshot.hasData) {
                         return GridView(
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
                           children: snapshot.data!.docs
                               .map((note) => noteCard(() {
                                     Navigator.push(
@@ -97,10 +96,10 @@ class _HomePageState extends State<HomePage> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => NoteEditorScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const NoteEditorScreen()));
             },
-            child: Icon(Icons.add),
             backgroundColor: Colors.yellow[800],
+            child: const Icon(Icons.add),
           ),
         ),
       ],

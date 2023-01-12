@@ -17,8 +17,8 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
   String date = Jiffy().format("yyyy / MMMM dd / h:mm a");
 
   
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _mainController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _mainController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppStyle.cardsColor[color_id],
-        title: Text(
+        title: const Text(
           'Notunuzu əlavə edin',
           style: TextStyle(color: Colors.black),
         ),
@@ -40,20 +40,20 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
           children: [
             TextField(
               controller: _titleController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: InputBorder.none,
                 hintText: 'Note Title',
               ),
               style: AppStyle.mainTitle,
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Text(
               date,
               style: AppStyle.dateTitle,
             ),
-            SizedBox(
+            const SizedBox(
               height: 28,
             ),
             Expanded(
@@ -61,7 +61,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
                 controller: _mainController,
                 keyboardType: TextInputType.multiline,
                 maxLines: null,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Note Content',
                 ),
@@ -82,7 +82,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
             Navigator.pop(context);
           }).catchError((error) => print("$error nömrəli xətaya görə notunuz əlavə oluna bilmədi!"));
         },
-        child: Icon(Icons.save),
+        child: const Icon(Icons.save),
       ),
     );
   }

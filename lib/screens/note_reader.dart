@@ -26,11 +26,11 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
                 FirebaseFirestore.instance.collection("Notes").doc(widget.doc["note_title"]).delete();
                 Navigator.pop(context);
               },
-              icon: Icon(Icons.highlight_remove_rounded))
+              icon: const Icon(Icons.highlight_remove_rounded))
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -38,14 +38,14 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
               widget.doc["note_title"],
               style: AppStyle.mainTitle,
             ),
-            SizedBox(
+            const SizedBox(
               height: 4,
             ),
             Text(
               widget.doc["creation_date"],
               style: AppStyle.dateTitle,
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Expanded(
@@ -57,20 +57,6 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
           ],
         ),
       ),
-      /*floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          FirebaseFirestore.instance.collection("Notes").add({
-            "note_title": "note_title",
-            "creation_date": "creation_date",
-            "note_content": "note_content",
-            "color_id": "color_id",
-          }).then((value) {
-            print(value.id);
-            Navigator.pop(context);
-          }).catchError((error) => print("$error nömrəli xətaya görə notunuz əlavə oluna bilmədi!"));
-        },
-        child: Icon(Icons.save),
-      ),*/
     );
   }
 }
