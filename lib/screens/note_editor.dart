@@ -27,14 +27,14 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
         elevation: 0,
         backgroundColor: AppStyle.cardsColor[color_id],
         title: const Text(
-          'Notunuzu əlavə edin',
-          style: TextStyle(color: Colors.black),
+          'Add your note',
+          style: TextStyle(color: Colors.black  , fontSize: 26 ),
         ),
         centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Padding(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
