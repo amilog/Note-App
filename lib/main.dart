@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Note App',
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.indigo),
       home: const MyHomePage(),
     );
@@ -65,7 +65,7 @@ class _SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 21, 39, 142),
+      backgroundColor: const Color(0xFF15278E),
       body: Center(
         child: Column(
           children: [
