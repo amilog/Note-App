@@ -26,7 +26,7 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
                 FirebaseFirestore.instance.collection("Notes").doc(widget.doc["note_title"]).delete();
                 Navigator.pop(context);
               },
-              icon: const Icon(Icons.delete))
+              icon: const Icon(Icons.highlight_remove_rounded))
         ],
       ),
       body: Padding(

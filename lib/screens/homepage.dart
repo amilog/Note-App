@@ -15,8 +15,21 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
+    return /*Container(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(begin: Alignment.topRight, end: Alignment.bottomRight, colors: [
+        Color.fromARGB(255, 4, 11, 88),
+        Color.fromARGB(255, 104, 5, 99),
+        Color.fromARGB(255, 79, 4, 46),
+        Color.fromARGB(255, 102, 13, 6),
+        Color.fromARGB(255, 113, 85, 28),
+        Color.fromARGB(255, 132, 121, 18),
+        Color.fromARGB(255, 5, 153, 173)
+      ])),
+      child:*/
+
+        Stack(
+      children: <Widget>[
         Image.asset(
           "assets/backgraund.png",
           height: MediaQuery.of(context).size.height,
@@ -27,22 +40,9 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             elevation: 0,
-            title: Stack(
-              children: [
-                Text(
-                  'Note 2 F',
-                  style: TextStyle(
-                      fontFamily: 'RubikVinly',
-                      fontSize: 33,
-                      foreground: Paint()
-                        ..style = PaintingStyle.stroke
-                        ..strokeWidth = 3),
-                ),
-                Text(
-                  'Note 2 F',
-                  style: TextStyle(fontFamily: 'RubikVinly', fontSize: 33, color: Colors.yellow[800]),
-                ),
-              ],
+            title: Text(
+              'Note 2 F',
+              style: TextStyle(fontFamily: 'RubikVinly', fontSize: 28, color: Colors.yellow[800]),
             ),
             centerTitle: true,
             backgroundColor: Colors.transparent,
@@ -53,25 +53,13 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Stack(
-                  children: [
-                    Text(
-                      'Your Notes',
-                      style: GoogleFonts.roboto(
-                          fontSize: 28,
-                          foreground: Paint()
-                            ..style = PaintingStyle.stroke
-                            ..strokeWidth = 3),
-                    ),
-                    Text(
-                      'Your Notes',
-                      style: GoogleFonts.roboto(
-                        color: Colors.yellow[800],
-                        fontWeight: FontWeight.bold,
-                        fontSize: 28,
-                      ),
-                    ),
-                  ],
+                Text(
+                  'Your Notes',
+                  style: GoogleFonts.roboto(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                  ),
                 ),
                 const SizedBox(
                   height: 20.0,
@@ -111,11 +99,7 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(context, MaterialPageRoute(builder: (context) => const NoteEditorScreen()));
             },
             backgroundColor: Colors.yellow[800],
-            child: const Icon(
-              Icons.add,
-              color: Colors.black,
-              size: 35,
-            ),
+            child: const Icon(Icons.add),
           ),
         ),
       ],
