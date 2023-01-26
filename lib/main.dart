@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:note2f/screens/login_screen.dart';
 import 'screens/homepage.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -38,12 +39,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(milliseconds: 3200)).then((value) {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) => const HomePage()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) => const LoginScreen()));
     });
   }
 
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 /************************/
-//    Splash Screen    //
+//!   Splash Screen    !//
 /************************/
 
 class _SplashScreen extends StatelessWidget {
