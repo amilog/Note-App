@@ -39,15 +39,27 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 320,
                 child: Center(
                   child: Column(
-                    children: const [
-                      TextField(
-
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              labelText: "First Name",
-            ),
-            //controller: controller,
-          ),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Container(
+                          padding: const EdgeInsets.all(6),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.grey,
+                              width: 1,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: const TextField(
+                            decoration: InputDecoration(
+                              hintText: "Enter your E-mail",
+                              border: InputBorder.none,
+                              prefixIcon: Icon(Icons.mail),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
