@@ -11,7 +11,6 @@ class NoteReaderScreen extends StatefulWidget {
 }
 
 class _NoteReaderScreenState extends State<NoteReaderScreen> {
-  
   @override
   Widget build(BuildContext context) {
     int color_id = widget.doc['color_id'];
@@ -49,11 +48,15 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
               height: 8,
             ),
             Expanded(
-              child: Text(
-                widget.doc["note_content"],
-                style: AppStyle.mainContent,
+              child: ListView(
+                children: [
+                  Text(
+                    widget.doc["note_content"],
+                    style: AppStyle.mainContent,
+                  ),
+                ],
               ),
-            ),
+            )
           ],
         ),
       ),
